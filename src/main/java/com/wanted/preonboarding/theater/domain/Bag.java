@@ -1,4 +1,5 @@
-package com.wanted.preonboarding.theater.service.handler;
+package com.wanted.preonboarding.theater.domain;
+import com.wanted.preonboarding.theater.domain.Ticket.Ticket;
 
 public class Bag {
     private Long amount;
@@ -12,6 +13,9 @@ public class Bag {
         this.invitation = invitation;
         this.amount = amount;
     }
+    public void takeTicket(Ticket ticket){
+        this.ticket = ticket;
+    }
 
     public boolean hasInvitation() {
         return invitation != null;
@@ -19,9 +23,7 @@ public class Bag {
     public boolean hasTicket() {
         return ticket != null;
     }
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
+
     public void minusAmount(long amount) {
         this.amount -= amount;
     }
